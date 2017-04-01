@@ -11,10 +11,12 @@
   </head>
 
   <body>
-    <%= render "layouts/header" %>
+    <%= react_component "Header" %>
     <div class="container">
-      <%= yield %>
-      <%= render "layouts/footer" %>
+      <div class="row">
+        <%= yield %>
+      </div>
+      <%= react_component "Footer" %>
     </div>
   </body>
 </html>

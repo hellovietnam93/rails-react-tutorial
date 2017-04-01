@@ -1,0 +1,7 @@
+en:
+  sessions:
+    labels:
+      username: "Username"
+      password: "Password"
+    new:
+      title: "Sign in"

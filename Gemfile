@@ -31,3 +31,4 @@ gem "react_on_rails", "~> 6"
 gem "mini_racer", platforms: :ruby
 gem "i18n-js"
 gem "bootstrap-sass", "~> 3.3.6"
+gem "bcrypt", "3.1.11"
