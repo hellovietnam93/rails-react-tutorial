@@ -1,0 +1,8 @@
+en:
+  layouts:
+    header:
+      logo_title: "Rails ReactJS"
+      login: "Log in"
+    footer:
+      description: "A small Rails ReactJS sample application"
+      contributors: "Framgia EduLab Ruby Team"
