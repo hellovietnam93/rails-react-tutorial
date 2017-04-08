@@ -35,6 +35,8 @@ config/secrets.yml
 # React on Rails
 npm-debug.log*
 node_modules
+public/javascripts/i18n.js
+public/javascripts/translations.js
 
 # Generated js bundles
 /app/assets/webpack/*
