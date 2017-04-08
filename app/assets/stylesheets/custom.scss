@@ -1,7 +1,19 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* mixins, variables, etc. */
+$c-red: #f00;
+
 /* universal */
 body {
   padding-top: 60px;
+}
+
+.error-explanation {
+  color: $c-red;
+
+  .list-errors {
+    color: $c-red;
+    margin: 0 0 30px;
+  }
 }

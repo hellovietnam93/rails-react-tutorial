@@ -1,0 +1,8 @@
+en:
+  users:
+    labels:
+      username: "Username"
+      password: "Password"
+      password_confirmation: "Password confirmation"
+    new:
+      title: "Sign up"
