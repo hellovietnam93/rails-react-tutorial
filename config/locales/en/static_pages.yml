@@ -1,0 +1,7 @@
+en:
+  static_pages:
+    show:
+      title: "Home"
+      welcome: "Welcome to the Sample App"
+      description: "This is the home page for the Rails ReactJS sample application."
+      sign_up: "Sign up now!"
