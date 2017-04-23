@@ -1,3 +1,4 @@
 en:
   messages:
     invalid_login: "Invalid email/password combination"
+    something_went_wrong: "Something went wrong"
