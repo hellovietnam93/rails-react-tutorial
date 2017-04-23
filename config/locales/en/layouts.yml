@@ -3,6 +3,10 @@ en:
     header:
       logo_title: "Rails ReactJS"
       login: "Sign in"
+      account: "Account"
+      profile: "Profile"
+      settings: "Settings"
+      log_out: "Log out"
     footer:
       description: "A small Rails ReactJS sample application"
       contributors: "Framgia EduLab Ruby Team"

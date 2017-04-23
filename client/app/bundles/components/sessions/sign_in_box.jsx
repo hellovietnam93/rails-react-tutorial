@@ -54,6 +54,7 @@ export default class SignInBox extends React.Component {
         authenticity_token: ReactOnRails.authenticityToken()
       },
       success: (data) => {
+        localStorage.setItem('current_user', JSON.stringify(data.user));
         let users_url = app_constants.APP_URL + user_constants.USERS_PATH;
         window.location.href = users_url + data.user.id
       },
