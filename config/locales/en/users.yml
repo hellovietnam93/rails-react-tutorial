@@ -6,3 +6,5 @@ en:
       password_confirmation: "Password confirmation"
     new:
       title: "Sign up"
+    edit:
+      title: "Update profile"

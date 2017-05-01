@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   post "sign_in", to: "sessions#create"
   delete "log_out", to: "sessions#destroy"
 
-  resources :users, only: [:new, :create, :show],
+  resources :users, except: [:index, :destroy],
     path_names: {new: "sign_up"}
 end

@@ -5,4 +5,8 @@ class User < ApplicationRecord
   validates :password, length: {minimum: 6}
 
   has_secure_password
+
+  def current_user? current_user
+    self == current_user
+  end
 end

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactOnRails from 'react-on-rails';
-import Errors from '../shareds/errors';
+import Errors from 'shareds/errors';
 import * as app_constants from 'constants/app_constants';
 import * as session_constants from './session_constants';
 import * as user_constants from '../users/user_constants';
@@ -54,7 +54,7 @@ export default class SignInBox extends React.Component {
         authenticity_token: ReactOnRails.authenticityToken()
       },
       success: (data) => {
-        localStorage.setItem('current_user', JSON.stringify(data.user));
+        sessionStorage.setItem('current_user', JSON.stringify(data.user));
         let users_url = app_constants.APP_URL + user_constants.USERS_PATH;
         window.location.href = users_url + data.user.id
       },
