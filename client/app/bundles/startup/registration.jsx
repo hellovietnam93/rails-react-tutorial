@@ -7,6 +7,7 @@ import SignInBox from '../components/sessions/sign_in_box';
 import SignUpBox from '../components/users/sign_up_box';
 import UserShowBox from '../components/users/user_show_box';
 import UserEditBox from '../components/users/edit_box';
+import PostBox from '../components/posts/box';
 
 ReactOnRails.register({
   Header,
@@ -16,4 +17,5 @@ ReactOnRails.register({
   SignUpBox,
   UserShowBox,
   UserEditBox,
+  PostBox,
 });

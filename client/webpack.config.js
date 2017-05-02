@@ -29,6 +29,7 @@ const config = {
       constants: path.join(process.cwd(), 'app', 'constants'),
       shareds: path.join(process.cwd(), 'app', 'bundles', 'components',
         'shareds'),
+      assets: path.join(process.cwd(), 'app', 'bundles', 'assets'),
     },
   },
   plugins: [

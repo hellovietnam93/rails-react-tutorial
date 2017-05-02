@@ -1,8 +1,7 @@
 import React from 'react';
 import * as app_constants from 'constants/app_constants';
 import * as user_constants from '../users/user_constants';
-
-require('../../assets/sass/static_pages.scss');
+import css from 'assets/sass/static_pages.scss';
 
 export default class StaticPagesShowBox extends React.Component {
   render() {
