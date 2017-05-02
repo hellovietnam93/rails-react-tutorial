@@ -7,8 +7,8 @@ export default class Header extends React.Component {
   render() {
     let root_url = app_constants.APP_URL;
     let navbar_right = null;
-    if (localStorage.current_user) {
-      let user = JSON.parse(localStorage.current_user);
+    if (sessionStorage.current_user) {
+      let user = JSON.parse(sessionStorage.current_user);
       let user_url = root_url + user_constants.USERS_PATH + user.id;
       navbar_right = (
         <ul className='nav navbar-nav navbar-right'>
@@ -65,7 +65,7 @@ export default class Header extends React.Component {
         authenticity_token: ReactOnRails.authenticityToken()
       },
       success: (data) => {
-        localStorage.removeItem('current_user');
+        sessionStorage.removeItem('current_user');
         let sign_in_url = app_constants.APP_URL +
           session_constants.SIGN_IN_PATH;
         window.location.href = sign_in_url;
