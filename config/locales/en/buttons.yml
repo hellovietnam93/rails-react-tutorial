@@ -1,3 +1,5 @@
 en:
   buttons:
     submit: "Submit"
+    edit: "Edit"
+    delete: "Delete"

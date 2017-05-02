@@ -1,0 +1,23 @@
+.posts {
+  .resize-y {
+    resize: vertical;
+  }
+
+  .post {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+
+    .username {
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .actions {
+      margin: 0;
+    }
+
+    &:hover {
+      background: #FEFFBE;
+    }
+  }
+}

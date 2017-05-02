@@ -1,2 +1,6 @@
 <% provide :title, t(".title") %>
-<%= react_component "StaticPagesShowBox", prerender: false %>
+<% if logged_in? %>
+  <%= react_component "PostBox", props: {posts: @posts}, prerender: false %>
+<% else %>
+  <%= react_component "StaticPagesShowBox", prerender: false %>
+<% end %>

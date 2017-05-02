@@ -1,0 +1,6 @@
+en:
+  posts:
+    labels:
+      content: "Content"
+    edit:
+      title: "Edit post"

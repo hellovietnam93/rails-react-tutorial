@@ -17,6 +17,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    @posts = @user.posts.newest.includes(:user).map do |post|
+      post.as_json include: :user
+    end
   end
 
   def edit
