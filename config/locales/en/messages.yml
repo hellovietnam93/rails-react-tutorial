@@ -2,3 +2,4 @@ en:
   messages:
     invalid_login: "Invalid email/password combination"
     something_went_wrong: "Something went wrong"
+    updated_success: "Updated success"

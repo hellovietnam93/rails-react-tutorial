@@ -14,14 +14,24 @@ export default class Form extends React.Component {
   }
 
   render() {
-    let username = this.props.user ? this.props.user.username : '';
+    let username_input = null;
+    if (this.props.user) {
+      username_input = (
+        <input type='text' className='form-control'
+          defaultValue={this.props.user.username} ref='username' disabled />
+      );
+    } else {
+      username_input = (
+        <input type='text' className='form-control' ref='username' />
+      );
+    }
+
     return (
       <form onSubmit={this.onSubmitForm.bind(this)}>
         <Errors errors={this.state.errors} />
         <div className='form-group'>
           <label>{I18n.t('users.labels.username')}</label>
-          <input type='text' className='form-control' defaultValue={username}
-            ref='username' />
+          {username_input}
         </div>
         <div className='form-group'>
           <label>{I18n.t('users.labels.password')}</label>
@@ -66,6 +76,7 @@ export default class Form extends React.Component {
       },
       success: (data) => {
         if (this.props.user) {
+          this.setState({errors: null});
           this.props.handleAfterUpdated(data.user);
         } else {
           sessionStorage.setItem('current_user', JSON.stringify(data.user));
