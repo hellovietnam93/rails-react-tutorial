@@ -1,12 +1,11 @@
 class PostsController < ApplicationController
   before_action :logged_in_user, except: [:show]
-  before_action :find_post, only: [:update, :destroy]
-
+  before_action :find_post, only: [:show, :update, :destroy]
 
   def create
     post = current_user.posts.build post_params
     if post.save
-      render json: {post: post.as_json(include: :user)}
+      render json: {post: post.as_json(include: [:user, :comments])}
     else
       render json: {errors: post.errors}, status: :unprocessable_entity
     end

@@ -2,6 +2,7 @@ class User < ApplicationRecord
   ATTRIBUTE_PARAMS = [:username, :password, :password_confirmation]
 
   has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   validates :username, presence: true, uniqueness: true
   validates :password, length: {minimum: 6}, allow_nil: true

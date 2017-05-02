@@ -1,9 +1,7 @@
-import css from 'assets/sass/posts.scss';
-import Form from './partials/form';
-import Posts from './posts';
 import React from 'react';
+import Posts from '../posts/posts';
 
-export default class PostBox extends React.Component {
+export default class UserShowBox extends React.Component {
   constructor(props) {
     super(props);
 
@@ -14,33 +12,22 @@ export default class PostBox extends React.Component {
 
   render() {
     return (
-      <div className='col-md-12 posts'>
-        <div className='row'>
-          <div className='col-md-4'>
-            <Form
-              handleAfterCreatedPost={this.handleAfterCreatedPost.bind(this)}
-            />
-          </div>
-          <div className='col-md-8'>
-            <Posts posts={this.state.posts}
-              handleAfterDeletedPost={this.handleAfterDeletedPost.bind(this)}
-              handleAfterUpdatedPost={this.handleAfterUpdatedPost.bind(this)}
-              handleAfterUpdatedComment=
-                {this.handleAfterUpdatedComment.bind(this)}
-              handleAfterCreatedComment=
-                {this.handleAfterCreatedComment.bind(this)}
-              handleAfterDeletedComment=
-                {this.handleAfterDeletedComment.bind(this)}
-            />
-          </div>
+      <div className='col-md-12'>
+        <h1 className='text-center'>{this.props.user.username}</h1>
+        <div className='posts'>
+          <Posts posts={this.state.posts}
+            handleAfterDeletedPost={this.handleAfterDeletedPost.bind(this)}
+            handleAfterUpdatedPost={this.handleAfterUpdatedPost.bind(this)}
+            handleAfterUpdatedComment=
+              {this.handleAfterUpdatedComment.bind(this)}
+            handleAfterCreatedComment=
+              {this.handleAfterCreatedComment.bind(this)}
+            handleAfterDeletedComment=
+              {this.handleAfterDeletedComment.bind(this)}
+          />
         </div>
       </div>
     );
-  }
-
-  handleAfterCreatedPost(post) {
-    this.state.posts.unshift(post);
-    this.setState({posts: this.state.posts});
   }
 
   handleAfterUpdatedPost(post) {

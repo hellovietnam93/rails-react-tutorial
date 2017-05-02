@@ -25,7 +25,11 @@ export default class Posts extends React.Component {
     return this.props.posts.map(post => {
      return (
         <Post key={post.id} post={post} editPost={this.editPost.bind(this)}
-          handleAfterDeletedPost={this.props.handleAfterDeletedPost} />
+          handleAfterDeletedPost={this.props.handleAfterDeletedPost}
+          handleAfterUpdatedComment={this.props.handleAfterUpdatedComment}
+          handleAfterCreatedComment={this.props.handleAfterCreatedComment}
+          handleAfterDeletedComment={this.props.handleAfterDeletedComment}
+        />
       );
     });
   }
