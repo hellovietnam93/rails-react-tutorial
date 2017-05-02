@@ -2,7 +2,7 @@ class User < ApplicationRecord
   ATTRIBUTE_PARAMS = [:username, :password, :password_confirmation]
 
   validates :username, presence: true, uniqueness: true
-  validates :password, length: {minimum: 6}
+  validates :password, length: {minimum: 6}, allow_nil: true
 
   has_secure_password
 

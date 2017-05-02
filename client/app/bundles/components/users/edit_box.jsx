@@ -22,6 +22,7 @@ export default class UserEditBox extends React.Component {
   }
 
   handleAfterUpdated(user) {
+    alert(I18n.t('messages.updated_success'));
     this.setState({user: user});
   }
 }
