@@ -4,20 +4,47 @@
   }
 
   .post {
-    padding: 10px;
+    .post-detail {
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+
+      .post-header {
+        margin: 0;
+
+        .username {
+          font-weight: bold;
+        }
+      }
+
+      .actions {
+        margin: 0;
+      }
+
+      &:hover {
+        background: #FEFFBE;
+      }
+    }
+  }
+
+  .comments {
+    padding-left: 20px;
     border-bottom: 1px solid #ccc;
 
-    .username {
-      font-weight: bold;
-      margin: 0;
+    .comment {
+      border-bottom: 1px solid #ccc;
+      padding: 10px;
+
+      &:hover {
+        background: #D6FFAF;
+      }
     }
 
-    .actions {
-      margin: 0;
+    .comment:last-child {
+      border-bottom: none;
     }
 
-    &:hover {
-      background: #FEFFBE;
+    .comment-form {
+      margin: 10px 0;
     }
   }
 }

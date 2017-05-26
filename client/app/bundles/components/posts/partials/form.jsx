@@ -33,7 +33,7 @@ export default class Form extends React.Component {
         </div>
         <div className='text-right'>
           <button className='btn btn-primary'>
-            {I18n.t('buttons.submit')}
+            {I18n.t('buttons.post')}
           </button>
         </div>
       </form>
@@ -65,7 +65,7 @@ export default class Form extends React.Component {
         authenticity_token: ReactOnRails.authenticityToken()
       },
       success: (data) => {
-        this.setState({errors: null});
+        this.setState({content: '', errors: null});
         if (this.props.post) {
           $('.modal-edit-post').modal('hide');
           this.props.handleAfterUpdatedPost(data.post);

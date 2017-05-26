@@ -7,5 +7,7 @@ Rails.application.routes.draw do
 
   resources :users, except: [:index, :destroy],
     path_names: {new: "sign_up"}
-  resources :posts, except: [:index, :new, :edit]
+  resources :posts, only: [:create, :update, :destroy] do
+    resources :comments, only: [:create, :update, :destroy]
+  end
 end

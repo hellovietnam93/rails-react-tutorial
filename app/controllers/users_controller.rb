@@ -17,8 +17,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @posts = @user.posts.newest.includes(:user).map do |post|
-      post.as_json include: :user
+    @posts = @user.posts.newest.includes(:comments).map do |post|
+      post.as_json include: [:user, comments: {include: :user}]
     end
   end
 
