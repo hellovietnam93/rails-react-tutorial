@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   def create
     post = current_user.posts.build post_params
     if post.save
-      render json: {post: post.as_json(include: [:user, :comments])}
+      render json: {post: post.as_json(include: [:user, :comments, :likes])}
     else
       render json: {errors: post.errors}, status: :unprocessable_entity
     end

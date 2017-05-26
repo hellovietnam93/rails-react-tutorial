@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  before_action :logged_in_user, only: [:destroy]
   before_action :check_login, only: [:new, :create]
 
   def new

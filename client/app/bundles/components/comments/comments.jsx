@@ -33,6 +33,8 @@ export default class Comments extends React.Component {
         <Comment key={comment.id} comment={comment}
           onEditComment={this.onEditComment.bind(this)}
           handleAfterDeletedComment={this.props.handleAfterDeletedComment}
+          handleAfterLikedComment={this.props.handleAfterLikedComment}
+          handleAfterUnlikedComment={this.props.handleAfterUnlikedComment}
         />
       );
     });

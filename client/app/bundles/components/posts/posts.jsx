@@ -29,6 +29,10 @@ export default class Posts extends React.Component {
           handleAfterUpdatedComment={this.props.handleAfterUpdatedComment}
           handleAfterCreatedComment={this.props.handleAfterCreatedComment}
           handleAfterDeletedComment={this.props.handleAfterDeletedComment}
+          handleAfterLikedPost={this.props.handleAfterLikedPost}
+          handleAfterUnlikedPost={this.props.handleAfterUnlikedPost}
+          handleAfterLikedComment={this.props.handleAfterLikedComment}
+          handleAfterUnlikedComment={this.props.handleAfterUnlikedComment}
         />
       );
     });
