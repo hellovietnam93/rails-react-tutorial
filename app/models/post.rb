@@ -4,6 +4,7 @@ class Post < ApplicationRecord
   belongs_to :user
 
   has_many :comments, dependent: :destroy
+  has_many :likes, as: :objectable, dependent: :destroy
 
   validates :user, presence: true
   validates :content, presence: true

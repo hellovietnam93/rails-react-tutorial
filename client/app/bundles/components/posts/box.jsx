@@ -31,6 +31,11 @@ export default class PostBox extends React.Component {
                 {this.handleAfterCreatedComment.bind(this)}
               handleAfterDeletedComment=
                 {this.handleAfterDeletedComment.bind(this)}
+              handleAfterLikedPost={this.handleAfterLikedPost.bind(this)}
+              handleAfterUnlikedPost={this.handleAfterUnlikedPost.bind(this)}
+              handleAfterLikedComment={this.handleAfterLikedComment.bind(this)}
+              handleAfterUnlikedComment=
+                {this.handleAfterUnlikedComment.bind(this)}
             />
           </div>
         </div>
@@ -60,7 +65,7 @@ export default class PostBox extends React.Component {
     let comment_index = this.state.posts[index].comments.findIndex(comment_ => {
       return comment_.id == comment.id;
     });
-    this.state.posts[index].comments[comment_index] = comment;
+    Object.assign(this.state.posts[index].comments[comment_index], comment);
     this.setState({posts: this.state.posts});
   }
 
@@ -76,6 +81,44 @@ export default class PostBox extends React.Component {
       return comment_.id == comment.id;
     });
     this.state.posts[index].comments.splice(comment_index, 1);
+    this.setState({posts: this.state.posts});
+  }
+
+  handleAfterLikedPost(like) {
+    let index = this.state.posts
+      .findIndex(post_ => post_.id == like.objectable_id);
+    this.state.posts[index].likes.push(like);
+    this.setState({posts: this.state.posts});
+  }
+
+  handleAfterUnlikedPost(like) {
+    let index = this.state.posts
+      .findIndex(post_ => post_.id == like.objectable_id);
+    let like_index = this.state.posts[index].likes.findIndex(like_ => {
+      return like_.id == like.id;
+    });
+    this.state.posts[index].likes.splice(like_index, 1);
+    this.setState({posts: this.state.posts});
+  }
+
+  handleAfterLikedComment(comment, like) {
+    let post_index = this.state.posts
+      .findIndex(post_ => post_.id == comment.post_id);
+    let comment_index = this.state.posts[post_index].comments
+      .findIndex(comment_ => comment_.id == like.objectable_id);
+    this.state.posts[post_index].comments[comment_index].likes.push(like);
+    this.setState({posts: this.state.posts});
+  }
+
+  handleAfterUnlikedComment(comment, like) {
+    let post_index = this.state.posts
+      .findIndex(post_ => post_.id == comment.post_id);
+    let comment_index = this.state.posts[post_index].comments
+      .findIndex(comment_ => comment_.id == like.objectable_id);
+    let like_index = this.state.posts[post_index].comments[comment_index].likes
+      .findIndex(like_ => like_.id == like.id);
+    this.state.posts[post_index].comments[comment_index].likes
+      .splice(like_index, 1);
     this.setState({posts: this.state.posts});
   }
 }

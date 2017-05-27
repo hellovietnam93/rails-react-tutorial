@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
   def create
     comment = @post.comments.build comment_params.merge(user: current_user)
     if comment.save
-      render json: {comment: comment.as_json(include: :user)}
+      render json: {comment: comment.as_json(include: [:user, :likes])}
     else
       render json: {errors: comment.errors}, status: :unprocessable_entity
     end
